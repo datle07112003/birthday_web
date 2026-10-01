@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="canvas"></canvas>
+
+
+    <audio id="music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <button id="musicButton" class="music-button">
+        🎵
+    </button>
+
+
+
+    <section id="screen1" class="screen active">
+
+        <div class="intro">
+
+            <p class="small-title">
+                ✨  ✨
+            </p>
+
+            <h1>
+                HAPPY
+                <span>BIRTHDAY</span>
+            </h1>
+
+            <p class="intro-text">
+                Có một bí mật ở đây nè ...
+            </p>
+
+
+            <div id="mainGift" class="main-gift">
+
+                <div class="gift-lid">
+
+                    <div class="gift-ribbon"></div>
+
+                </div>
+
+                <div class="gift-body">
+
+                    <div class="gift-ribbon"></div>
+
+                </div>
+
+                <div class="gift-bow">
+
+                    <span class="bow-left"></span>
+
+                    <span class="bow-right"></span>
+
+                    <span class="bow-center"></span>
+
+                </div>
+
+            </div>
+
+
+            <button id="openMainGift" class="main-button">
+                 Click
+            </button>
+
+            <p class="hint">
+                Nhấn vào hộp quà
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="screen2" class="screen">
+
+        <div class="content">
+
+            <div class="birthday-header">
+
+                <div class="crown">
+                    👑
+                </div>
+
+                <p class="to-you">
+                    Gửi đến người đặc biệt
+                </p>
+
+                <h2>
+                    HAPPY
+                    <span>BIRTHDAY!</span>
+                </h2>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="wish-box">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    Chúc em  có một sinh nhật thật vui vẻ,
+                    hạnh phúc và tràn ngập những điều tốt đẹp.
+                </p>
+
+                <p>
+                    Tuổi mới chúc em luôn mạnh khỏe và xinh đẹp,
+                    luôn vui vẻ và luôn giữ nụ cười trên môi.
+                </p>
+
+                <p>
+                    Mong rằng tất cả những điều em muốn
+                    đều sẽ trở thành hiện thực.
+                </p>
+
+                <p class="special">
+                    ❤️ Chúc mừng sinh nhật! ❤️
+                </p>
+
+            </div>
+
+
+        
+            <h3 class="section-title">
+                📸 Máy anh hơi ít ảnh nhưng mỗi ảnh là một khoảnh khắc đánh nhớ nên xem hết nha
+            </h3>
+
+
+            <div class="photo-slider">
+
+                <button
+                    id="prevPhoto"
+                    class="slider-button">
+                    ❮
+                </button>
+
+
+                <div class="photo-container">
+
+                    <img
+                        id="albumImage"
+                        src="assets/anh1.jpg"
+                        alt="Ảnh sinh nhật">
+
+                    <div class="photo-number">
+                        <span id="photoCurrent">1</span>
+                        /
+                        <span id="photoTotal">6</span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="nextPhoto"
+                    class="slider-button">
+                    ❯
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="photoDots"
+                class="photo-dots">
+            </div>
+
+
+            
+            <button
+                id="goToGift"
+                class="main-button next-button">
+
+                🎁 Còn nữa nè...
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+   
+    <section id="screen3" class="screen">
+
+        <div class="second-gift-screen">
+
+            <p class="small-title">
+                ✨ Nhưng chưa hết đâu... ✨
+            </p>
+
+            <h2>
+                Còn một món quà
+                <span>đặc biệt</span>
+            </h2>
+
+
+        
+            <div
+                id="secondGift"
+                class="second-gift">
+
+                <div class="second-lid">
+
+                    <div class="second-ribbon"></div>
+
+                </div>
+
+                <div class="second-body">
+
+                    <div class="second-ribbon"></div>
+
+                </div>
+
+                <div class="second-bow">
+
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="openSecondGift"
+                class="main-button">
+
+                🎁 MỞ HỘP
+
+            </button>
+
+
+            <p class="hint">
+                Bạn có tò mò bên trong có gì không?
+            </p>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <section id="screen4" class="screen">
+
+        <div class="mystery-container">
+
+            <p class="small-title">
+                🎁 Hãy chọn cho mình một món quà nào
+            </p>
+
+            <h2>
+                CHỌN MỘT
+                <span>HỘP BÍ ẨN</span>
+            </h2>
+
+            <p class="mystery-description">
+                Mỗi hộp đều chứa một món quà đặc biệt.
+                Nhưng chỉ được chọn một hộp thôi nhé:))) ❤️
+            </p>
+
+
+          
+
+            <div class="mystery-boxes">
+
+
+                
+
+                <div
+                    class="mystery-wrapper"
+                    data-box="1"
+                    onclick="openGift(1)">
+
+                    <div class="mystery-box">
+
+                        <div class="mystery-lid">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-body">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-bow">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Hộp 1
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="mystery-wrapper"
+                    data-box="2"
+                    onclick="openGift(2)">
+
+                    <div class="mystery-box">
+
+                        <div class="mystery-lid">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-body">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-bow">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Hộp 2
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="mystery-wrapper"
+                    data-box="3"
+                    onclick="openGift(3)">
+
+                    <div class="mystery-box">
+
+                        <div class="mystery-lid">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-body">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-bow">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Hộp 3
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="mystery-wrapper"
+                    data-box="4"
+                    onclick="openGift(4)">
+
+                    <div class="mystery-box">
+
+                        <div class="mystery-lid">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-body">
+
+                            <div class="mystery-ribbon"></div>
+
+                        </div>
+
+                        <div class="mystery-bow">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Hộp 4
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p class="hint">
+                ✨ Để bất ngờ thì món quà được lựa chọn sẽ được đặt sau nghen ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section id="screen5" class="screen">
+
+        <div class="result-container">
+
+            <div class="result-icon" id="resultIcon">
+                🎁
+            </div>
+
+
+            <p class="small-title">
+                ✨ Món quà dành cho bạn ✨
+            </p>
+
+
+            <h2 id="resultTitle">
+                Một món quà đặc biệt
+            </h2>
+
+
+            <div class="result-card">
+
+                <div
+                    id="resultImage"
+                    class="result-image">
+
+                </div>
+
+
+                <div class="result-content">
+
+                    <h3 id="resultHeading">
+                        ❤️ Dành tặng bạn
+                    </h3>
+
+                    <p id="resultText">
+                        Đây là món quà đặc biệt
+                        dành riêng cho bạn.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-message">
+
+                <p>
+                    
+                </p>
+
+                <strong>
+                    Chúc em sinh nhật thật hạnh phúc! 🎂
+                </strong>
+
+            </div>
+
+
+            <button
+                id="replayButton"
+                class="main-button">
+
+                🔄 Xem lại từ đầu
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PHẦN DỮ LIỆU 4 MÓN QUÀ
+         BẠN CHỈ CẦN SỬA Ở ĐÂY
+    ====================================== -->
+
+    <script>
+
+        const giftData = {
+
+            1: {
+                icon: "",
+                title: "Món quà số 1",
+                heading: "❤️ Dành tặng bạn",
+                text: "Đây là món quà đầu tiên dành riêng cho bạn.",
+                image: "assets/qua1.jpg"
+            },
+
+            2: {
+                icon: "",
+                title: "Món quà số 2",
+                heading: "💖 Một lời nhắn đặc biệt",
+                text: "Đây là món quà thứ hai dành riêng cho bạn.",
+                image: "assets/qua2.jpg"
+            },
+
+            3: {
+                icon: "",
+                title: "Món quà số 3",
+                heading: "✨ Một kỷ niệm",
+                text: "Đây là món quà thứ ba dành riêng cho bạn.",
+                image: "assets/qua3.jpg"
+            },
+
+            4: {
+                icon: "",
+                title: "Món quà số 4",
+                heading: "❤️ Món quà đặc biệt",
+                text: "Đây là món quà cuối cùng dành riêng cho bạn.",
+                image: "assets/qua4.jpg"
+            }
+
+        };
+
+
+        function openGift(number) {
+
+            const gift = giftData[number];
+
+            if (!gift) {
+                return;
+            }
+
+
+            document.getElementById("resultIcon").textContent =
+                gift.icon;
+
+
+            document.getElementById("resultTitle").textContent =
+                gift.title;
+
+
+            document.getElementById("resultHeading").textContent =
+                gift.heading;
+
+
+            document.getElementById("resultText").textContent =
+                gift.text;
+
+
+            const resultImage =
+                document.getElementById("resultImage");
+
+
+            resultImage.style.backgroundImage =
+                `url("${gift.image}")`;
+
+
+            document.querySelectorAll(".screen").forEach(function(screen) {
+                screen.classList.remove("active");
+            });
+
+
+            document.getElementById("screen5")
+                .classList.add("active");
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
